@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Online Shopping Website</title>
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f6fa;
+    color: #333;
+}
+
+header {
+    background-color: #6c3483;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+nav {
+    background-color: #512e5f;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffd166;
+}
+
+.banner {
+    background: linear-gradient(120deg, #f8c8dc, #e8daef);
+    text-align: center;
+    padding: 55px 20px;
+    margin: 20px;
+    border-radius: 12px;
+}
+
+.banner h2 {
+    color: #512e5f;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.banner p {
+    margin-bottom: 12px;
+}
+
+.banner h3 {
+    color: #d35400;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+.shop-now {
+    display: inline-block;
+    background-color: #6c3483;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+section {
+    padding: 25px;
+}
+
+section h2 {
+    text-align: center;
+    color: #512e5f;
+    margin-bottom: 25px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.category {
+    background-color: white;
+    padding: 25px 10px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 3px 8px #ddd;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px #ddd;
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.product-card h3 {
+    color: #512e5f;
+    margin: 12px 0;
+}
+
+.description {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.rating {
+    color: #e67e22;
+    margin: 8px;
+}
+
+.price {
+    color: #218c4a;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.price del {
+    color: #888;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.discount {
+    display: block;
+    color: #d35400;
+    font-weight: bold;
+    margin: 10px;
+}
+
+button {
+    background-color: #6c3483;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: #512e5f;
+}
+
+.offer {
+    background-color: #e8daef;
+    text-align: center;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.offer p {
+    margin: 10px;
+}
+
+footer {
+    background-color: #512e5f;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    line-height: 1.8;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .product-grid,
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+
+    .banner h2 {
+        font-size: 25px;
+    }
+}
+</style>
+<body>
+
+    <header>
+        <h1>🛍️ ShopEasy</h1>
+        <p>Your Shopping Destination</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#products">Products</a>
+        <a href="#offers">Offers</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="banner" id="home">
+        <h2>Big Shopping Sale!</h2>
+        <p>Discover amazing products at exciting prices.</p>
+        <h3>Up to 50% OFF</h3>
+        <a href="#products" class="shop-now">Shop Now</a>
+    </section>
+
+    <section id="categories">
+        <h2>Shop by Category</h2>
+
+        <div class="category-grid">
+            <div class="category">👕 Fashion</div>
+            <div class="category">📱 Electronics</div>
+            <div class="category">⌚ Accessories</div>
+            <div class="category">👟 Footwear</div>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2>Featured Products</h2>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400"
+                     alt="Wrist Watch">
+                <h3>Classic Wrist Watch</h3>
+                <p class="description">Stylish watch for everyday use.</p>
+                <p class="rating">⭐ 4.5/5</p>
+                <p class="price">₹999 <del>₹1,499</del></p>
+                <span class="discount">33% OFF</span>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400"
+                     alt="Headphones">
+                <h3>Wireless Headphones</h3>
+                <p class="description">Enjoy music with clear sound.</p>
+                <p class="rating">⭐ 4.7/5</p>
+                <p class="price">₹1,499 <del>₹2,499</del></p>
+                <span class="discount">40% OFF</span>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400"
+                     alt="Red Sports Shoes">
+                <h3>Sports Shoes</h3>
+                <p class="description">Comfortable shoes for daily wear.</p>
+                <p class="rating">⭐ 4.3/5</p>
+                <p class="price">₹1,199 <del>₹1,999</del></p>
+                <span class="discount">40% OFF</span>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400"
+                     alt="Cotton T-shirt">
+                <h3>Cotton T-Shirt</h3>
+                <p class="description">Soft and comfortable casual wear.</p>
+                <p class="rating">⭐ 4.4/5</p>
+                <p class="price">₹499 <del>₹799</del></p>
+                <span class="discount">37% OFF</span>
+                <button>Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="offer" id="offers">
+        <h2>Special Offers</h2>
+        <p>Get exciting deals on your favourite products!</p>
+        <p>Free delivery on orders above ₹999.</p>
+    </section>
+
+    <footer id="contact">
+        <h3>ShopEasy</h3>
+        <p>Email: support@shopeasy.example</p>
+        <p>© 2026 ShopEasy. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

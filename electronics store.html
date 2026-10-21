@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ElectroMart - Electronics Store</title>
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f6fa;
+    color: #333;
+}
+
+header {
+    background-color: #123456;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+nav {
+    background-color: #087e8b;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffe66d;
+}
+
+.banner {
+    background: linear-gradient(120deg, #cce5ff, #d6f5f5);
+    text-align: center;
+    padding: 50px 20px;
+    margin: 20px;
+    border-radius: 12px;
+}
+
+.banner h2 {
+    color: #123456;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.banner p {
+    margin-bottom: 12px;
+}
+
+.banner h3 {
+    color: #e05d26;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.shop-button {
+    display: inline-block;
+    background-color: #087e8b;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+}
+
+section {
+    padding: 25px;
+}
+
+section h2 {
+    text-align: center;
+    color: #123456;
+    margin-bottom: 25px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.category {
+    background-color: white;
+    padding: 25px 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px #ddd;
+}
+
+.filter {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.filter select {
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px #ddd;
+}
+
+.product-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.discount {
+    display: inline-block;
+    background-color: #ffe0b2;
+    color: #c0392b;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.product-card h3 {
+    color: #123456;
+    margin: 12px 0;
+}
+
+.product-card p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.price {
+    color: #16834a;
+    font-size: 19px !important;
+    font-weight: bold;
+}
+
+.price del {
+    color: #888;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.rating {
+    color: #e6a817;
+}
+
+button {
+    background-color: #087e8b;
+    color: white;
+    padding: 11px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #065f68;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th, td {
+    padding: 14px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+th {
+    background-color: #123456;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #eaf3f8;
+}
+
+.offer {
+    background-color: #d6f5f5;
+    text-align: center;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.offer p {
+    margin: 10px;
+}
+
+footer {
+    background-color: #123456;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .product-grid,
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 7px;
+    }
+
+    .banner h2 {
+        font-size: 25px;
+    }
+
+    th, td {
+        padding: 7px;
+        font-size: 12px;
+    }
+}
+</style>
+<body>
+
+    <header>
+        <h1>⚡ ElectroMart</h1>
+        <p>Your One-Stop Electronics Store</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#products">Products</a>
+        <a href="#comparison">Compare</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="banner" id="home">
+        <h2>Big Electronics Sale!</h2>
+        <p>Upgrade Your Technology at Amazing Prices</p>
+        <h3>Up to 40% OFF</h3>
+        <a href="#products" class="shop-button">Explore Products</a>
+    </section>
+
+    <section id="categories">
+        <h2>Shop by Category</h2>
+
+        <div class="category-grid">
+            <div class="category">💻 Laptops</div>
+            <div class="category">📱 Smartphones</div>
+            <div class="category">🎧 Accessories</div>
+            <div class="category">⌚ Smart Devices</div>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2>Our Products</h2>
+
+        <div class="filter">
+            <label for="category">Filter by Category: </label>
+            <select id="category">
+                <option>All Products</option>
+                <option>Laptops</option>
+                <option>Smartphones</option>
+                <option>Accessories</option>
+                <option>Smart Devices</option>
+            </select>
+        </div>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500"
+                     alt="Laptop">
+                <span class="discount">20% OFF</span>
+                <h3>HP Laptop</h3>
+                <p>Intel Core i5, 8GB RAM, 512GB SSD</p>
+                <p class="price">₹49,999 <del>₹62,499</del></p>
+                <p class="rating">⭐ 4.5/5</p>
+                <button>View Details</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500"
+                     alt="Smartphone">
+                <span class="discount">15% OFF</span>
+                <h3>Smartphone</h3>
+                <p>128GB Storage, 8GB RAM, OLED Display</p>
+                <p class="price">₹24,999 <del>₹29,499</del></p>
+                <p class="rating">⭐ 4.6/5</p>
+                <button>View Details</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"
+                     alt="Headphones">
+                <span class="discount">25% OFF</span>
+                <h3>Wireless Headphones</h3>
+                <p>Bluetooth, Noise Isolation, Long Battery</p>
+                <p class="price">₹2,999 <del>₹3,999</del></p>
+                <p class="rating">⭐ 4.4/5</p>
+                <button>View Details</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
+                     alt="Smart Watch">
+                <span class="discount">30% OFF</span>
+                <h3>Smart Watch</h3>
+                <p>Fitness Tracking, Heart Rate, Notifications</p>
+                <p class="price">₹3,499 <del>₹4,999</del></p>
+                <p class="rating">⭐ 4.3/5</p>
+                <button>View Details</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="comparison">
+        <h2>Product Comparison</h2>
+
+        <table>
+            <tr>
+                <th>Specification</th>
+                <th>HP Laptop</th>
+                <th>Smartphone</th>
+            </tr>
+            <tr>
+                <td>RAM</td>
+                <td>8GB</td>
+                <td>8GB</td>
+            </tr>
+            <tr>
+                <td>Storage</td>
+                <td>512GB SSD</td>
+                <td>128GB</td>
+            </tr>
+            <tr>
+                <td>Display</td>
+                <td>15.6-inch</td>
+                <td>6.5-inch</td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td>₹49,999</td>
+                <td>₹24,999</td>
+            </tr>
+            <tr>
+                <td>Discount</td>
+                <td>20%</td>
+                <td>15%</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="offer">
+        <h2>Special Offers</h2>
+        <p>Get exciting deals on selected electronics!</p>
+        <p>Free delivery on eligible orders.</p>
+    </section>
+
+    <footer id="contact">
+        <h3>ElectroMart</h3>
+        <p>Email: support@electromart.example</p>
+        <p>© 2026 ElectroMart. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
